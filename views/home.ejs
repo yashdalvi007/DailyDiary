@@ -1,0 +1,43 @@
+<%- include("header") -%>
+
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Welcome Yash</h1>
+              <p class="lead">Welcome to your own personal e-Diary. Write a new story worth to be remembered.</p>
+            </div>
+          </div>
+
+          <% for(var i=0; i < post.length; i++){ %>
+          <div class="card mr-5 ml-5 mb-4">
+            <h5 class="card-header">Featured</h5>
+            <div class="card-body">
+                <h5 class="card-title"><%= post[i].title %></h5>
+                <p class="card-text"><%= post[i].story %></p>
+                <a href="/post/<%= post[i].title %>" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <% } %>
+
+          
+<div class="mr-5 ml-5">
+       <div class="card">
+  <h5 class="card-header">Feature</h5>
+  <div class="card-body">
+    <form id='story' method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input type="text" class="form-control" name='title' id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Title">
+        </div>
+        <div class="form-group">
+            <label for="comment">Your Story</label>
+            <textarea class="form-control" name='story' rows="5" id="comment"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+  </div>
+  </div>
+
+
+
